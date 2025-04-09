@@ -1,0 +1,7 @@
+SELECT spr.spr_code
+  FROM sits.ins_spr spr
+  LEFT JOIN sits.men_mhd mhd
+ON mhd.mhd_inst = 'RESULTS_HTML'
+   AND mhd.mhd_tref = spr.spr_code
+ WHERE spr.sts_code = 'C'
+   AND mhd.mhd_code IS NOT NULL;
